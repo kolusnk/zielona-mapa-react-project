@@ -1,5 +1,5 @@
 .cta-container {
-  margin-top: 3rem;
+  padding-top: 4rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,5 +13,9 @@
   .cta-buttons {
     display: flex;
     gap: 1rem;
+
+    .btn {
+      padding: 10px 20px;
+    }
   }
 }

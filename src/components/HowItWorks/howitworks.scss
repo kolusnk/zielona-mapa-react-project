@@ -1,0 +1,27 @@
+.how-it-works {
+  &__container {
+    padding-top: 4rem;
+  }
+  &__title {
+    font-size: 2rem;
+  }
+
+  &__step {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__text-box {
+    width: 50%;
+  }
+
+  &__img-box {
+    width: 50%;
+    height: 200px;
+  }
+
+}
+
+
+

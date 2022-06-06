@@ -7,10 +7,10 @@ export function Banner() {
             <div className='container cta-container'>
                     <h1  className='cta-heading'>Znajdź swoje zielone miejsce do życia!</h1>
                     <p>Na naszej mapie możesz znaleźć informacje dotyczące zieleni miejskiej w Twojej okolicy.
-                        Sprawdź ile drzew jest w miejcu w któtym chcesz zamieszkać.</p>
+                        Wpisy innych użytkowników powiedzą Ci ile drzew widzą z okien swoich mieszkań, dowiesz się czy w okolicy jest "betonoza", czy o poranku słychać śpiew ptaków oraz czy w mieszkaniu jest dobre nasłonecznienie.</p>
                     <div className='cta-buttons'>
-                        <button>Spawdź na mapie</button>
-                        <button>Uzupełnij dane</button>
+                        <button className='btn btn-primary'>Sprawdź na mapie</button>
+                        <button className='btn btn-secondary'>Uzupełnij dane</button>
                     </div>
 
             </div>
