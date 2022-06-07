@@ -1,19 +1,33 @@
 import './App.scss';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import {Header} from "./components/Header/Header";
-import {Banner} from "./components/Banner/Banner";
-import {HowItWorks} from "./components/HowItWorks/HowItWorks";
-import {GetToForm} from "./components/GetToForm/GeToForm";
 import {Footer} from "./components/Footer/Footer";
+import {Home} from "./pages/Home";
+import {Map} from "./pages/Map";
+import {FormPage} from "./pages/FormPage";
+
 
 function App() {
     return (
-        <>
-            <Header/>
-            <Banner/>
-            <HowItWorks/>
-            <GetToForm/>
-            <Footer/>
-        </>
+        <Router>
+            <div className="App">
+                <Header/>
+                <div className="content">
+                    <Switch>
+                        <Route exact path="/">
+                            <Home/>
+                        </Route>
+                        <Route path="/map">
+                            <Map/>
+                        </Route>
+                        <Route path="/formpage">
+                            <FormPage/>
+                        </Route>
+                    </Switch>
+                </div>
+                <Footer/>
+            </div>
+        </Router>
     );
 }
 

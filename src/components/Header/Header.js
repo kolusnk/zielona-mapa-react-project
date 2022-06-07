@@ -1,5 +1,7 @@
 import React from 'react';
 import './header.scss'
+import { Link } from "react-router-dom";
+
 
 export function Header() {
     return (
@@ -8,9 +10,9 @@ export function Header() {
                 <a href='#' className='header__logo logo'>ZielonaMapa.pl</a>
                 <nav className="header__nav main-nav">
                     <ul className="main-nav__list">
-                        <li className="main-nav-list__element"><a href='#'>O nas</a></li>
-                        <li className="main-nav-list__element"><a href='#'>Mapa</a></li>
-                        <li className="main-nav-list__element"><a href='#'>Formularz</a></li>
+                        <li className="main-nav-list__element"><Link to="/">O nas</Link></li>
+                        <li className="main-nav-list__element"><Link to="/map">Mapa</Link></li>
+                        <li className="main-nav-list__element"><Link to="/formpage">Formularz</Link></li>
                     </ul>
                 </nav>
             </div>
