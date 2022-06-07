@@ -7,7 +7,7 @@ export function StepTwo() {
             <div className='how-it-works__text-box'>
                 <span>02</span>
                 <h3>Teraz wybierz pinezkę i kliknij ją</h3>
-                <p>Możesz przejrzeć listę wyników dla lokalizacji - jeśli jest więcej niż jeden wynik, otrzymasz całe zestawienie</p>
+                <p>Możesz przejrzeć listę wyników dla lokalizacji - jeśli jest więcej niż jeden wynik, otrzymasz całe zestawienie.</p>
             </div>
         </div>
     )
