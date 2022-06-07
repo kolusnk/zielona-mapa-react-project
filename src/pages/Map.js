@@ -3,6 +3,7 @@ import './map.scss'
 import 'leaflet/dist/leaflet.css'
 
 import {MapContainer, TileLayer, useMap, Marker, Popup} from 'react-leaflet'
+import {PinMarker} from "../components/Map/PinMarker";
 
 export const Map = () => {
     const center = [52.23043861355005, 21.010922836222367]
@@ -16,11 +17,11 @@ export const Map = () => {
                             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                         />
-                        <Marker position={[52.23043861355005, 21.010922836222367]}>
+                        <PinMarker position={[52.23043861355005, 21.010922836222367]}>
                             <Popup>
                                 A pretty CSS3 popup. <br /> Easily customizable.
                             </Popup>
-                        </Marker>
+                        </PinMarker>
                     </MapContainer>
                 </div>
             </section>

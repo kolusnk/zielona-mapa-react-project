@@ -7,7 +7,7 @@ export function Header() {
     return (
         <header className="header">
             <div className="container header__container">
-                <a href='#' className='header__logo logo'>ZielonaMapa.pl</a>
+                <Link to="/">ZielonaMapa.pl</Link>
                 <nav className="header__nav main-nav">
                     <ul className="main-nav__list">
                         <li className="main-nav-list__element"><Link to="/">O nas</Link></li>

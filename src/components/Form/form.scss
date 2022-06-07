@@ -1,0 +1,17 @@
+.form__section {
+  &-container {
+    padding: 3rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &-form {
+    width: 500px;
+  }
+
+  &-label {
+    width: 300px;
+  }
+}
+
