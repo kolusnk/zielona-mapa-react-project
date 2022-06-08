@@ -1,17 +1,46 @@
 .form__section {
+    height:87vh;
   &-container {
     padding: 3rem 0;
     display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  &-form {
-    width: 500px;
-  }
-
-  &-label {
-    width: 300px;
+    justify-content: space-between;
+    align-items:center;
   }
 }
+
+.form {
+  padding-left: 2rem;
+  padding-right: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+
+  &__input {
+    width: 400px;
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+    border-radius: 6px;
+    padding: 5px 10px;
+    border: 1px solid #55dfb4;
+  }
+
+  select {
+    background-color: transparent;
+  }
+}
+
+.form-text {
+  &__container {
+    padding-top:2rem;
+    display: flex;
+    justify-content: center;
+  }
+  &__title {
+    font-size:2rem;
+    justify-self: flex-start;
+  }
+
+}
+
 
