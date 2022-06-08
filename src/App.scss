@@ -41,16 +41,21 @@ body {
     background-color: white;
     color: $color-green;
     box-shadow: 3px 10px 14px $color-secondary-shadow;
+    transition: all 175ms cubic-bezier(0.91, 0, 0.55, 1.64);
+
 
     &:hover {
       background-color: $color-green;
       color: white;
       border: 1px solid $color-green;
+      transform: scale(1.05, 1.05);
+
     }
   }
 
   &-green {
     background-color: $color-green;
+    transition: all 175ms cubic-bezier(0.91, 0, 0.55, 1.64);
 
     a {
       color: white;
@@ -59,6 +64,8 @@ body {
       background-color:white;
       color: $color-green;
       border: 1px solid $color-green;
+      transform: scale(1.05, 1.05);
+
       a {
         color: $color-green;
       }
