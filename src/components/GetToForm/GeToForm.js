@@ -1,5 +1,6 @@
 import React from 'react';
 import './gettoform.scss'
+import {Link} from "react-router-dom";
 
 export function GetToForm () {
     return (
@@ -12,8 +13,12 @@ export function GetToForm () {
                 zielono jest w okół nas. Wypełnienie formularza nie zajmie długo, odpowiesz w nim na kilka prostych i przyjemnych
                 pytań, a dzięki temu pomożesz innym zobaczyć jak zielono jest w Twojej okolicy! Prawda, że brzmi fajnie?</p>
                 <div className='get-to-form__buttons'>
-                    <button className='btn btn-primary'>Wypełnij formularz</button>
-                    <button className='btn btn-secondary'>Sprawdź na mapie</button>
+                    <Link className="btn-link" to="/formpage">
+                        <button className='btn btn-primary btn-green'>Wypełnij formularz</button>
+                    </Link>
+                    <Link className="btn-link" to="/map">
+                        <button className='btn btn-secondary'>Sprawdź na mapie</button>
+                    </Link>
                 </div>
             </div>
         </section>

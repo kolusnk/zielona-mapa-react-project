@@ -1,3 +1,17 @@
+//KOLORY ////////////////////////////////////////////////////////////////
+
+$color-green: #55dfb4;
+$color-text-light: #a5a5a5;
+$color-primary-shadow: rgba(53, 145, 118, 0.16);
+$color-secondary-shadow: rgba(165, 165, 165, 0.18);
+
+
+$button-radius: 35px;
+
+
+//PODSTAWOWE STYLOWANIE ////////////////////////////////////////////////////////////////
+
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -8,6 +22,50 @@ body {
 }
 
 .btn {
-  padding: 10px 20px;
-}
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  display: inline-block;
+  padding: 16px 65px;
+  border-radius: 35px;
+  border: 1px solid transparent;
 
+
+  &-primary {
+    box-shadow: 3px 10px 14px $color-primary-shadow;
+  }
+
+
+  &-secondary {
+    border: 1px solid $color-green;
+    background-color: white;
+    color: $color-green;
+    box-shadow: 3px 10px 14px $color-secondary-shadow;
+
+    &:hover {
+      background-color: $color-green;
+      color: white;
+      border: 1px solid $color-green;
+    }
+  }
+
+  &-green {
+    background-color: $color-green;
+
+    a {
+      color: white;
+    }
+    &:hover {
+      background-color:white;
+      color: $color-green;
+      border: 1px solid $color-green;
+      a {
+        color: $color-green;
+      }
+    }
+  }
+
+  &-large {
+    padding: 22px 155px;
+  }
+}

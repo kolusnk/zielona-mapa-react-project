@@ -1,11 +1,12 @@
 import React from 'react';
 import './footer.scss'
+import {Link} from "react-router-dom";
 
 export function Footer() {
     return (
         <footer className="footer">
             <div className="container footer__container">
-                <a href='#' className="footer__logo logo">ZielonaMapa.pl</a>
+                <Link className="header__logo" to="/">ZielonaMapa.pl</Link>
                 <div className='footer__contact'>
                     <h4 className="footer__contact-title">Skontaktuj się z nami</h4>
                     <div className="footer__contact-adres">Adres:

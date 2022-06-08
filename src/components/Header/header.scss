@@ -1,15 +1,42 @@
+$color-green: #55dfb4;
+$color-text-light: #a5a5a5;
+
+
 .header {
-  font-size: 1.5rem;
+  box-shadow: 0 1px 16px rgba(0, 0, 0, 0.16);
+
+  &__logo {
+    color: $color-green;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
 
   &__container {
-    margin-top: 2rem;
+    padding: 1.5rem;
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
 
   .main-nav__list {
     display: flex;
-    gap: 2rem;
+    &-element {
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 0 1.6rem;
+      .nav-link {
+        padding-bottom: 1.42rem;
+        padding-inline: 1.2rem;
+        color: $color-text-light;
+        border-bottom: 4px solid transparent;
+        letter-spacing: 0.15rem;
+        &:hover {
+          color: black;
+          border-color: $color-green;
+        }
+      }
+    }
   }
 
 }

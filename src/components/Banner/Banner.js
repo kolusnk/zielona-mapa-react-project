@@ -1,5 +1,6 @@
 import React from 'react';
 import './banner.scss'
+import {Link} from "react-router-dom";
 
 export function Banner() {
     return (
@@ -12,8 +13,13 @@ export function Banner() {
                     czy w mieszkaniu jest dobre nasłonecznienie. Możesz też pomóc nam w rozwoju naszej
                     bazy danych wypełniając krótki formularz.</p>
                 <div className='cta__buttons'>
-                    <button className='btn btn-primary'>Sprawdź na mapie</button>
-                    <button className='btn btn-secondary'>Wypełnij formularz</button>
+                    <Link className="btn-link" to="/map">
+                        <button className='btn btn-primary btn-green'>Sprawdź na mapie</button>
+                    </Link>
+                    <Link className="btn-link" to="/formpage">
+                        <button className='btn btn-secondary'>Wypełnij formularz</button>
+                    </Link>
+
                 </div>
 
             </div>
