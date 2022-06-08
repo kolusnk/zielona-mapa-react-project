@@ -1,6 +1,6 @@
 .form__section {
-    height: calc(100vh - 3.5rem);
   &-container {
+    height: calc(90vh - 3.5rem);
     padding: 3rem 0;
     display: flex;
     justify-content: space-between;
@@ -30,6 +30,7 @@
   }
 
   input[type="submit"] {
+    margin-top: 1rem;
     align-self: flex-end;
   }
 

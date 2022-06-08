@@ -59,12 +59,9 @@ export function Form({generalError, onSubmit}) {
                 errorMessage={errorMessages?.trees}
                 onChange={handleChange}
             />
-            <div style={{display: 'flex', justifyContent: 'space-between'}}>
-                <span style={{backgroundColor: '#f003'}}>{generalError}</span>
                 <input
                     className='btn'
                     type='submit' value='Wyślij!'/>
-            </div>
         </form>
     )
 }
