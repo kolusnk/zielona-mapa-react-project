@@ -60,7 +60,7 @@ export function Form({generalError, onSubmit}) {
                 onChange={handleChange}
             />
                 <input
-                    className='btn'
+                    className='btn btn-primary btn-green'
                     type='submit' value='Wyślij!'/>
         </form>
     )

@@ -1,5 +1,6 @@
 .form__section {
   &-container {
+    padding-inline: 4rem;
     height: calc(90vh - 3.5rem);
     display: flex;
     justify-content: space-between;
@@ -8,15 +9,18 @@
 }
 
 .form {
+  width: 50%;
   padding-left: 2rem;
-  padding-right: 4rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 
+  &__field {
+    width: 100%;
+  }
 
   &__input {
-    width: 400px;
+    width: 100%;
     margin-top: .5rem;
     margin-bottom: .5rem;
     border-radius: 6px;
@@ -26,7 +30,8 @@
 
   input[type="submit"] {
     margin-top: 1rem;
-    align-self: flex-end;
+    align-self: stretch;
+
   }
 
   .error-message {
@@ -39,28 +44,21 @@
 .form-text {
   &__container {
     padding-top:2rem;
-    padding-left: 4rem;
     width:40%;
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
+
+  &__subtitle {
+    text-transform: uppercase;
+  }
+
   &__title {
+    margin-top: 0.5rem;
     font-size:2rem;
     justify-self: flex-start;
   }
 
 }
 
-
-//form {
-//  max-width:22em;
-//  display:flex;
-//  flex-direction:column;
-//}
-//
-//input[type="text"],
-//input[type="password"] {
-//  width:100%;
-//}
-//

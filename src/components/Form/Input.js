@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 
 export function Input({label, type, name, value, errorMessage, onChange, min, max}) {
     return (
-        <label>
+        <label className='form__field'>
             {label} {errorMessage && <span className='error-message'>({errorMessage})</span>}<br/>
             <input
                 className='form__input'
