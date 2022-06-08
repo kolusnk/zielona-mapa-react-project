@@ -10,7 +10,7 @@ export function StepThree() {
                     jest w okolicy i zdecydować czy jest to miejsce dla Ciebie.</p>
             </div>
             <div className='how-it-works__img-box'>
-                <i className="fa-solid fa-question"></i>
+                <i className="fa-solid fa-tree-city"></i>
             </div>
         </div>
     )

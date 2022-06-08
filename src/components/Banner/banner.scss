@@ -1,4 +1,18 @@
 .cta {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: url("../../images/banner-bg.jpg");
+    background-size:cover;
+    opacity: 0.15;
+    z-index: -1;
+  }
+
   &__container {
     height: calc(100vh - 4rem - 72px);
     padding-top: 4rem;
