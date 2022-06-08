@@ -1,5 +1,5 @@
 .form__section {
-    height:87vh;
+    height: calc(100vh - 3.5rem);
   &-container {
     padding: 3rem 0;
     display: flex;
@@ -25,14 +25,24 @@
     border: 1px solid #55dfb4;
   }
 
-  select {
-    background-color: transparent;
+  .error-message {
+    color: #f37171;
   }
+
+  input[type="submit"] {
+    align-self: flex-end;
+  }
+
+
+
+
 }
 
 .form-text {
   &__container {
     padding-top:2rem;
+    padding-left: 4rem;
+    width:40%;
     display: flex;
     justify-content: center;
   }
@@ -44,3 +54,14 @@
 }
 
 
+//form {
+//  max-width:22em;
+//  display:flex;
+//  flex-direction:column;
+//}
+//
+//input[type="text"],
+//input[type="password"] {
+//  width:100%;
+//}
+//

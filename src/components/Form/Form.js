@@ -1,32 +1,70 @@
-import React from 'react';
+import React, {useState} from 'react'
 import {Input} from "./Input";
-import {Select} from "./Select";
+import {validate} from "./validate";
 
-export function Form() {
+export function Form({generalError, onSubmit}) {
+    const [values, setValues] = useState({name: '', email: '', trees: ''});
+    const [errorMessages, setErrorMessages] = useState(null)
+
+    function handleChange(event) {
+        const {name, value} = event.target
+
+        setValues(prevValues => {
+            return {
+                ...prevValues,
+                [name]: value,
+            }
+        })
+    }
+
+    function handleSubmit(event) {
+        event.preventDefault()
+
+        const errorMessages = validate(values);
+        setErrorMessages(errorMessages)
+
+        if (errorMessages) return
+        if (typeof onSubmit === 'function') {
+            console.log(values)
+            onSubmit(values);
+        }
+    }
+
+
     return (
-        <form className="form">
+        <form className='form' onSubmit={handleSubmit}>
             <Input
                 label='Imię:'
                 type='text'
                 name='name'
+                value={values.name}
+                errorMessage={errorMessages?.name}
+                onChange={handleChange}
             />
             <Input
                 label='Email:'
                 type='email'
                 name='email'
+                value={values.email}
+                errorMessage={errorMessages?.email}
+                onChange={handleChange}
             />
             <Input
-                label='ilość drzew:'
+                label='Ilość drzew które widzisz z okna:'
                 type='number'
                 name='trees'
-                min='0'
-                max='20'
+                value={values.trees}
+                min={0}
+                max={20}
+                errorMessage={errorMessages?.trees}
+                onChange={handleChange}
             />
-            <Select
-                label='śpiew ptaków:'
-                name='trees'
-                options={['tak', 'nie']}
-            />
+            <div style={{display: 'flex', justifyContent: 'space-between'}}>
+                <span style={{backgroundColor: '#f003'}}>{generalError}</span>
+                <input
+                    className='btn'
+                    type='submit' value='Wyślij!'/>
+            </div>
         </form>
     )
 }

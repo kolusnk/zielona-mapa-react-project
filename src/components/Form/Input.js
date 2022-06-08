@@ -1,19 +1,18 @@
-import React from 'react';
+import React, {useState} from 'react'
 
-export function Input({label, type, name, min, max}) {
+export function Input({label, type, name, value, errorMessage, onChange, min, max}) {
     return (
-        <div className="form__field">
-            <label className="form__label" htmlFor="name">{label}</label><br/>
-            <input type={type}
-                   className="form__input"
-                   name={name}
-                   id={name}
-                   min={min}
-                   max={max}
-                   required
+        <label>
+            {label} {errorMessage && <span className='error-message'>({errorMessage})</span>}<br/>
+            <input
+                className='form__input'
+                type={type}
+                name={name}
+                value={value}
+                onChange={onChange}
+                min={min}
+                max={max}
             />
-        </div>
+        </label>
     )
 }
-
-
