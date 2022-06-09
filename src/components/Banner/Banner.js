@@ -7,7 +7,7 @@ export function Banner() {
         <section className='cta'>
             <div className='container cta__container'>
                 <h1 className='cta__heading'>Znajdź swoje zielone miejsce do życia!</h1>
-                <p>Na naszej mapie możesz znaleźć informacje dotyczące zieleni miejskiej w Twojej okolicy.
+                <p className='cta__text'>Na naszej mapie możesz znaleźć informacje dotyczące zieleni miejskiej w Twojej okolicy.
                     Wpisy innych użytkowników powiedzą Ci ile drzew widzą z okien swoich mieszkań,
                     dowiesz się czy w okolicy jest "betonoza", czy o poranku słychać śpiew ptaków oraz
                     czy w mieszkaniu jest dobre nasłonecznienie. Możesz też pomóc nam w rozwoju naszej
