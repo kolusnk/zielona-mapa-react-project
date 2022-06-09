@@ -2,7 +2,7 @@ import React from 'react';
 
 export function StepThree() {
     return (
-        <div className="how-it-works__step step-three">
+        <div className="how-it-works__step step-three grid">
             <div className='how-it-works__text-box'>
                 <span className="text-box__number">03</span>
                 <h3 className="text-box__title">Zdecyduj czy lokalizacja jest dla Ciebie atrakcyjna</h3>

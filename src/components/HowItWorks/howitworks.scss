@@ -49,7 +49,39 @@
 }
 
 
+@media (max-width: 660px) {
+  .how-it-works {
+    &__container {
+      padding-inline: 2rem;
+    }
 
+
+    &__title {
+      font-size: 1.2rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      justify-items: center;
+      how-it-works__text-box {
+        grid-row: 2;
+
+      }
+
+      .how-it-works__text-box {
+        width: 90%;
+      }
+
+        .how-it-works__img-box {
+        grid-row: 1;
+        font-size: 5rem;
+        height: 150px;
+      }
+    }
+
+  }
+}
 
 
 

@@ -2,7 +2,7 @@ import React from 'react';
 
 export function StepTwo() {
     return (
-        <div className="how-it-works__step step-two">
+        <div className="how-it-works__step step-two grid">
             <div className='how-it-works__img-box'>
                 <i className="fa-solid fa-location-dot"></i>
             </div>

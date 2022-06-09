@@ -2,7 +2,7 @@ import React from 'react';
 
 export function StepOne() {
     return (
-        <div className="how-it-works__step step-one">
+        <div className="how-it-works__step step-one grid">
             <div className='how-it-works__text-box'>
                 <span className="text-box__number">01</span>
                 <h3 className="text-box__title">Wyszukaj na mapie interesującą Cię lokalizację</h3>
