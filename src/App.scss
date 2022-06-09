@@ -31,10 +31,6 @@ body {
   border: 1px solid transparent;
 
 
-  &-primary {
-    box-shadow: 3px 10px 14px $color-primary-shadow;
-  }
-
 
   &-secondary {
     border: 1px solid $color-green;
@@ -53,7 +49,8 @@ body {
     }
   }
 
-  &-green {
+  &-primary {
+    box-shadow: 3px 10px 14px $color-primary-shadow;
     background-color: $color-green;
     transition: all 175ms cubic-bezier(0.91, 0, 0.55, 1.64);
 
