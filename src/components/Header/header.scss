@@ -25,6 +25,9 @@ $color-text-light: #a5a5a5;
       font-weight: 600;
       font-size: 1rem;
       padding: 0 1.6rem;
+      &:last-child {
+        padding: 0;
+      }
       .nav-link {
         padding-bottom: 1.42rem;
         padding-inline: 1.2rem;
@@ -37,6 +40,35 @@ $color-text-light: #a5a5a5;
         }
       }
     }
+  }
+
+}
+
+@media (max-width: 760px) {
+  .header {
+
+    &__logo {
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
+
+    .main-nav__list {
+      &-element {
+        font-weight: 500;
+        font-size: 1rem;
+        padding: 0 1.3rem;
+        &:last-child {
+          padding: 0;
+        }
+        .nav-link {
+          padding-bottom: 1.28rem;
+          padding-inline: 0.8rem;
+          letter-spacing: 0.1rem;
+
+        }
+      }
+    }
+
   }
 
 }

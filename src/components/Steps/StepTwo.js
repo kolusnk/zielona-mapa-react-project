@@ -7,7 +7,7 @@ export function StepTwo() {
                 <i className="fa-solid fa-location-dot"></i>
             </div>
             <div className='how-it-works__text-box'>
-                <span class="text-box__number">02</span>
+                <span className="text-box__number">02</span>
                 <h3 className="text-box__title">Teraz wybierz pinezkę i kliknij ją</h3>
                 <p className="text-box__text">Możesz przejrzeć listę wyników dla lokalizacji - jeśli jest więcej niż jeden wynik,
                     otrzymasz całe zestawienie.</p>
