@@ -6,7 +6,7 @@ export function Footer() {
     return (
         <footer className="footer">
             <div className="container footer__container">
-                <Link className="header__logo" to="/">ZielonaMapa.pl</Link>
+                <Link className="footer__logo" to="/">ZielonaMapa.pl</Link>
                 <div className='footer__contact'>
                     <h4 className="footer__contact-title">Skontaktuj się z nami</h4>
                     <div className="contact">

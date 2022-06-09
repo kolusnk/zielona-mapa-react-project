@@ -8,7 +8,8 @@
   }
 
   &__logo {
-    margin-left: 2rem;
+    color: #55dfb4;
+    font-weight: 600;
     font-size: 1.5rem;
   }
 
@@ -20,6 +21,36 @@
     font-size:0.8rem;
     &__details {
       align-self: flex-end;
+    }
+  }
+}
+
+@media (max-width: 760px) {
+  .footer {
+    &__container {
+      padding: 1.5rem 2rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &__logo {
+      font-size: 1rem;
+    }
+
+    .footer__contact-title {
+      font-size: 0.8rem;
+    }
+
+    .contact {
+      color: #a5a5a5;
+      margin-top: 1rem;
+      display: flex;
+      gap: 1rem;
+      font-size:0.5rem;
+      &__details {
+        align-self: flex-end;
+      }
     }
   }
 }
