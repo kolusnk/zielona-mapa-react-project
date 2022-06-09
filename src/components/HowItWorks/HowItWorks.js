@@ -1,8 +1,8 @@
 import React from "react";
 import './howitworks.scss'
-import {StepOne} from "../Steps/StepOne";
-import {StepTwo} from "../Steps/StepTwo";
-import {StepThree} from "../Steps/StepThree";
+import {StepOne} from "./StepOne";
+import {StepTwo} from "./StepTwo";
+import {StepThree} from "./StepThree";
 
 export function HowItWorks() {
     return (

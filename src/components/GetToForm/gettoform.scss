@@ -21,6 +21,20 @@
 
   }
 
+}
 
+
+@media (max-width: 760px) {
+  .get-to-form {
+    &__buttons {
+      flex-direction: column;
+      gap: 1rem;
+
+      .btn {
+        padding: 12px 50px;
+        border-radius: 35px;
+      }
+    }
+  }
 }
 
