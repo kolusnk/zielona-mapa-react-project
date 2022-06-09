@@ -1,12 +1,13 @@
 .map__container {
+  height: calc(100vh - 72px);
   display: flex;
   justify-content:center;
   align-items: center;
 }
 
 #map {
-  height: calc(80vh);
-  width: 90%;
+  height: 80%;
+  width: 95%;
   padding: 2rem 0;
 }
 
