@@ -13,6 +13,9 @@
 
 .custom-style {
   box-shadow: 0 1px 5px rgba(0,0,0,0.65) !important;
+  --icon-width: 50px !important;
+  --icon-height: 50px !important;
+  --active-height: 40px !important;
   --background-color-candidate: #c3ecdf !important;
   --background-color-hover: #c3ecdf !important;
   --background-color-active: #55dfb4 !important;
