@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactLeafletSearch from "react-leaflet-search";
 import { Popup } from "react-leaflet";
-
 import {icon} from "leaflet";
+import './map.scss'
 
 export const SearchInput = (props) => {
     const myIcon = icon({
@@ -22,6 +22,6 @@ export const SearchInput = (props) => {
 
 
     return (
-        <ReactLeafletSearch position="topleft" markerIcon={myIcon} popUp={myPopup}/>
+        <ReactLeafletSearch position="topleft" markerIcon={myIcon} popUp={myPopup} className="custom-style"/>
     )
 }
