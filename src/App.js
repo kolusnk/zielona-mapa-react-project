@@ -1,9 +1,7 @@
 import './App.scss';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import {Header} from "./components/Header/Header";
-import {Footer} from "./components/Footer/Footer";
 import {Home} from "./pages/Home";
-import {Map} from "./pages/Map";
+import {MapPage} from "./pages/MapPage";
 import {FormPage} from "./pages/FormPage";
 
 
@@ -17,7 +15,7 @@ function App() {
                             <Home/>
                         </Route>
                         <Route path="/map">
-                            <Map/>
+                            <MapPage/>
                         </Route>
                         <Route path="/formpage">
                             <FormPage/>
