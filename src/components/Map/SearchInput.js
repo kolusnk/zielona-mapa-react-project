@@ -6,8 +6,8 @@ import './map.scss'
 
 export const SearchInput = (props) => {
     const myIcon = icon({
-        iconUrl: `${process.env.PUBLIC_URL}/images/marker-icon.png`,
-        iconSize: [32, 42]
+        iconUrl: `${process.env.PUBLIC_URL}/images/icons8-location-50.png`,
+        iconSize: [32, 32]
     })
 
     function myPopup(SearchInfo) {
