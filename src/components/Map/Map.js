@@ -31,7 +31,7 @@ export function Map() {
                         markers.map(marker => {
                             return <PinMarker key={marker.id} position={[marker.positionX, marker.positionY]}>
                                 <Popup>
-                                    {marker.positionX} {marker.positionY}
+                                    ilość drzew {marker.trees}
                                 </Popup>
                             </PinMarker>
                         })
