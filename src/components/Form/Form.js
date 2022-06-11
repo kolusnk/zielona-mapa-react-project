@@ -2,10 +2,8 @@ import React, {useState} from 'react'
 import {Input} from "./Input";
 import {validate} from "./validate";
 import db from '../../firebase/firebase';
-import firestore from "../../firebase/firebase"
 import {addDoc, collection} from 'firebase/firestore'
 import async from "async";
-import {preventDefault} from "leaflet/src/dom/DomEvent";
 
 
 export function Form() {
@@ -31,7 +29,7 @@ export function Form() {
     }
 
     const sendToDatabase = async (event) => {
-        preventDefault(event)
+        event.preventDefault()
         const errorMessages = validate(values);
         setErrorMessages(errorMessages)
 
@@ -74,6 +72,9 @@ export function Form() {
                 type='number'
                 name='positionX'
                 value={values.positionX}
+                min={-90}
+                max={90}
+                errorMessage={errorMessages?.positionX}
                 onChange={handleChange}
             />
 
@@ -82,6 +83,9 @@ export function Form() {
                 type='number'
                 name='positionY'
                 value={values.positionY}
+                min={-180}
+                max={180}
+                errorMessage={errorMessages?.positionY}
                 onChange={handleChange}
             />
 

@@ -1,4 +1,3 @@
-
 export function validate(values) {
     const errorMessages = {}
 
@@ -9,6 +8,17 @@ export function validate(values) {
     if (values.email.length <= 8) {
         errorMessages.email = 'musi być dłuższy niż 7 znaków'
     }
+
+    if (values.positionX > 90 || values.positionX < -90 || values.positionX == "")
+    {
+        errorMessages.positionX = 'współrzędne niepoprawne'
+    }
+
+
+    if (values.positionY > 180 || values.positionY < -180 || values.positionY == "") {
+        errorMessages.positionY = 'współrzędne niepoprawne'
+    }
+
 
     return Object.keys(errorMessages).length > 0
         ? errorMessages
