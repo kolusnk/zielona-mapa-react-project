@@ -12,7 +12,7 @@ export function FormMain() {
             <div className="container">
                 <div className="form__section-container">
                     <FormText/>
-                    <Form onSubmit={handleSubmit}/>
+                    <Form/>
                 </div>
             </div>
 

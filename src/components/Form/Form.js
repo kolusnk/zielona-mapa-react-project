@@ -1,10 +1,23 @@
 import React, {useState} from 'react'
 import {Input} from "./Input";
 import {validate} from "./validate";
+import db from '../../firebase/firebase';
+import firestore from "../../firebase/firebase"
+import {addDoc, collection} from 'firebase/firestore'
+import async from "async";
+import {preventDefault} from "leaflet/src/dom/DomEvent";
 
-export function Form({generalError, onSubmit}) {
-    const [values, setValues] = useState({name: '', email: '', trees: ''});
+
+export function Form() {
+    const [values, setValues] = useState({
+        name: '',
+        email: '',
+        positionX: '',
+        positionY: '',
+        trees: ''
+    });
     const [errorMessages, setErrorMessages] = useState(null)
+    const pinmarkersCollection = collection(db, 'pinmarkers')
 
     function handleChange(event) {
         const {name, value} = event.target
@@ -17,22 +30,28 @@ export function Form({generalError, onSubmit}) {
         })
     }
 
-    function handleSubmit(event) {
-        event.preventDefault()
-
+    const sendToDatabase = async (event) => {
+        preventDefault(event)
         const errorMessages = validate(values);
         setErrorMessages(errorMessages)
 
         if (errorMessages) return
-        if (typeof onSubmit === 'function') {
-            console.log(values)
-            onSubmit(values);
-        }
+
+
+        await addDoc(pinmarkersCollection, {
+            name: values.name,
+            email: values.email,
+            positionX: values.positionX,
+            positionY: values.positionY,
+            trees: Number(values.trees)
+        })
+
+        setValues({name: '', email: '', positionX: '', positionY: '', trees: ''})
     }
 
 
     return (
-        <form className='form' onSubmit={handleSubmit}>
+        <form className='form'>
             <Input
                 label='Imię:'
                 type='text'
@@ -49,19 +68,34 @@ export function Form({generalError, onSubmit}) {
                 errorMessage={errorMessages?.email}
                 onChange={handleChange}
             />
+
+            <Input
+                label='positionX:'
+                type='number'
+                name='positionX'
+                value={values.positionX}
+                onChange={handleChange}
+            />
+
+            <Input
+                label='positionY:'
+                type='number'
+                name='positionY'
+                value={values.positionY}
+                onChange={handleChange}
+            />
+
             <Input
                 label='Ilość drzew które widzisz z okna:'
                 type='number'
                 name='trees'
                 value={values.trees}
                 min={0}
-                max={20}
-                errorMessage={errorMessages?.trees}
+                max={100}
                 onChange={handleChange}
             />
-                <input
-                    className='btn btn-primary btn-green'
-                    type='submit' value='Wyślij!'/>
+
+            <button className='btn btn-primary btn-green' onClick={sendToDatabase}>Wyślij</button>
         </form>
     )
 }

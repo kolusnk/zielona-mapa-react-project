@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from 'react';
-import 'leaflet/dist/leaflet.css'
-import './map.scss'
-import {Map, Popup, TileLayer} from "react-leaflet";
+import {SearchInput} from "./SearchInput"
 import {PinMarker} from "./PinMarker";
+import './map.scss'
+import 'leaflet/dist/leaflet.css'
+import {Map, Popup, TileLayer} from "react-leaflet";
 import db from '../../firebase/firebase';
 import {onSnapshot, collection} from 'firebase/firestore'
-import {SearchInput} from "./SearchInput"
 
 
 
