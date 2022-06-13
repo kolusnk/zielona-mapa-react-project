@@ -14,14 +14,8 @@ export function validate(values) {
         errorMessages.email = 'adres email niepoprawny'
     }
 
-    if (values.positionX > 90 || values.positionX < -90 || values.positionX == "")
-    {
-        errorMessages.positionX = 'współrzędne niepoprawne'
-    }
-
-
-    if (values.positionY > 180 || values.positionY < -180 || values.positionY == "") {
-        errorMessages.positionY = 'współrzędne niepoprawne'
+    if (values.trees === '') {
+        errorMessages.trees = 'podaj liczbę drzew'
     }
 
 

@@ -3,18 +3,25 @@ import {Input} from "./Input";
 import {validate} from "./validate";
 import db from '../../firebase/firebase';
 import {addDoc, collection} from 'firebase/firestore'
-import async from "async";
+import PlacesAutocomplete, {
+    geocodeByAddress,
+    getLatLng
+} from "react-places-autocomplete";
 
 
 export function Form() {
     const [values, setValues] = useState({
         name: '',
         email: '',
-        positionX: '',
-        positionY: '',
         trees: ''
     });
+    const [address, setAddress] = React.useState("");
+    const [coordinates, setCoordinates] = React.useState({
+        lat: null,
+        lng: null
+    });
     const [errorMessages, setErrorMessages] = useState(null)
+    const [adressError, setAddressError] = useState(null)
     const [successInfo, setSuccessInfo] = useState(null)
     const pinmarkersCollection = collection(db, 'pinmarkers')
 
@@ -29,25 +36,38 @@ export function Form() {
         })
     }
 
+
+    const handleSelectLocation = async value => {
+        const results = await geocodeByAddress(value);
+        const latLng = await getLatLng(results[0]);
+        setAddress(value);
+        setCoordinates(latLng);
+    };
+
     const sendToDatabase = async (event) => {
         event.preventDefault()
         const errorMessages = validate(values);
         setErrorMessages(errorMessages)
         const successMessage = 'wysłano, dziękujemy!'
+        const adressErrorMessage = 'nie podano adresu'
 
 
         if (errorMessages) return
+        if (!address) {
+            setAddressError(adressErrorMessage)
+            return
+        }
 
 
         await addDoc(pinmarkersCollection, {
             name: values.name,
             email: values.email,
-            positionX: values.positionX,
-            positionY: values.positionY,
+            positionX: coordinates.lat,
+            positionY: coordinates.lng,
             trees: Number(values.trees)
         })
-
-        setValues({name: '', email: '', positionX: '', positionY: '', trees: ''})
+        setValues({name: '', email: '', trees: ''})
+        setAddress('')
         setSuccessInfo(successMessage)
     }
 
@@ -71,27 +91,37 @@ export function Form() {
                 onChange={handleChange}
             />
 
-            <Input
-                label='positionX:'
-                type='number'
-                name='positionX'
-                value={values.positionX}
-                min={-90}
-                max={90}
-                errorMessage={errorMessages?.positionX}
-                onChange={handleChange}
-            />
 
-            <Input
-                label='positionY:'
-                type='number'
-                name='positionY'
-                value={values.positionY}
-                min={-180}
-                max={180}
-                errorMessage={errorMessages?.positionY}
-                onChange={handleChange}
-            />
+            <PlacesAutocomplete
+                value={address}
+                onChange={setAddress}
+                onSelect={handleSelectLocation}
+            >
+                {({getInputProps, suggestions, getSuggestionItemProps, loading}) => (
+                    <div style={{width: '100%'}} key={coordinates.lat}>
+                        <span>Adres:</span> {adressError && <span className='error-message'>({adressError})</span>}
+                        <input {...getInputProps({placeholder: "wyszukaj adres"})}
+                               className='form__input'
+                        />
+
+                        <div>
+                            {loading ? <div>...loading</div> : null}
+
+                            {suggestions.map(suggestion => {
+                                const style = {
+                                    backgroundColor: suggestion.active ? "#55dfb4" : "#fff"
+                                };
+
+                                return (
+                                    <div {...getSuggestionItemProps(suggestion, {style})} key={suggestion.description}>
+                                        {suggestion.description}
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    </div>
+                )}
+            </PlacesAutocomplete>
 
             <Input
                 label='Ilość drzew które widzisz z okna:'
@@ -100,6 +130,7 @@ export function Form() {
                 value={values.trees}
                 min={0}
                 max={100}
+                errorMessage={errorMessages?.trees}
                 onChange={handleChange}
             />
 
