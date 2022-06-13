@@ -28,16 +28,30 @@
     border: 1px solid #55dfb4;
   }
 
+  .error-message {
+    color: #f37171;
+  }
+
+  .button-and-succes {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
   button {
     margin-top: 1rem;
     align-self: stretch;
 
   }
 
-  .error-message {
-    color: #f37171;
-  }
 
+  .succes-message {
+    color: #55dfb4;
+    text-transform: uppercase;
+    margin: 1rem;
+  }
 
 }
 

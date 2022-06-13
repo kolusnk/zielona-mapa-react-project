@@ -15,6 +15,7 @@ export function Form() {
         trees: ''
     });
     const [errorMessages, setErrorMessages] = useState(null)
+    const [successInfo, setSuccessInfo] = useState(null)
     const pinmarkersCollection = collection(db, 'pinmarkers')
 
     function handleChange(event) {
@@ -32,6 +33,8 @@ export function Form() {
         event.preventDefault()
         const errorMessages = validate(values);
         setErrorMessages(errorMessages)
+        const successMessage = 'wysłano, dziękujemy!'
+
 
         if (errorMessages) return
 
@@ -45,6 +48,7 @@ export function Form() {
         })
 
         setValues({name: '', email: '', positionX: '', positionY: '', trees: ''})
+        setSuccessInfo(successMessage)
     }
 
 
@@ -99,7 +103,10 @@ export function Form() {
                 onChange={handleChange}
             />
 
-            <button className='btn btn-primary btn-green' onClick={sendToDatabase}>Wyślij</button>
+            <div className='button-and-succes'>
+                <button className='btn btn-primary btn-green' onClick={sendToDatabase}>Wyślij</button>
+                {successInfo && <span className='succes-message'>({successInfo})</span>}<br/>
+            </div>
         </form>
     )
 }
