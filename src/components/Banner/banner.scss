@@ -15,8 +15,8 @@
   }
 
   &__container {
-    height: calc(100vh - 4rem - 72px);
-    padding-top: 4rem;
+    height: calc(100vh - 72px);
+    //padding-top: 4rem;
     padding-inline: 4rem;
     display: flex;
     flex-direction: column;
@@ -118,3 +118,16 @@
   }
 
 }
+
+
+//@media (max-height: 460px) {
+//  .cta {
+//    &__container {
+//      height: inherit;
+//      padding-top: 4rem;
+//      padding-bottom: 4rem;
+//    }
+//  }
+//
+//}
+

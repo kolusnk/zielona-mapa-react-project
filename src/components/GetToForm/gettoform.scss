@@ -26,12 +26,17 @@
 
 @media (max-width: 760px) {
   .get-to-form {
+    &__container {
+      padding-inline: 2rem;
+    }
     &__title {
       font-size: 1.4rem;
+      align-self: stretch;
     }
 
     &__text {
       font-size: 0.9rem;
+      align-self: stretch;
     }
 
 
