@@ -18,12 +18,13 @@ export function GoogleMapSearch({value, onChange, onSelect, adressError}) {
                            className='form__input'
                     />
 
+
                     <div>
                         {loading ? <div>...szukam</div> : null}
 
                         {suggestions.map(suggestion => {
                             const style = {
-                                backgroundColor: suggestion.active ? "#55dfb4" : "#fff"
+                                backgroundColor: suggestion.active ? "#55dfb4" : "#fff",
                             };
 
                             return (

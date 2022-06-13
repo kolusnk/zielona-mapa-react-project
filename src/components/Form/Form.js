@@ -8,20 +8,25 @@ import {geocodeByAddress, getLatLng} from "react-places-autocomplete";
 
 
 export function Form() {
+
+    // określenie stanów i utworzenie przydatnych zmiennych //
+
     const [values, setValues] = useState({
         name: '',
         email: '',
         trees: ''
     });
-    const [adress, setAdress] = useState("");
     const [coordinates, setCoordinates] = useState({
         lat: null,
         lng: null
     });
+    const [adress, setAdress] = useState("");
     const [errorMessages, setErrorMessages] = useState(null)
     const [adressError, setAdressError] = useState(null)
     const [successInfo, setSuccessInfo] = useState(null)
     const pinmarkersCollection = collection(db, 'pinmarkers')
+
+    // obsługa zmiany wartości inputów i uaktualnienie ich stanu//
 
     function handleChange(event) {
         const {name, value} = event.target
@@ -34,6 +39,7 @@ export function Form() {
         })
     }
 
+    // obsługa WYBORU ADRESU i uaktualnienie jego stanu //
 
     const handleSelectLocation = async value => {
         const results = await geocodeByAddress(value);
@@ -42,6 +48,8 @@ export function Form() {
         setCoordinates(latLng);
     };
 
+    // wysyłanie wartości formularza do bazy danych //
+
     const sendToDatabase = async (event) => {
         event.preventDefault()
         const errorMessages = validate(values);
@@ -49,6 +57,7 @@ export function Form() {
         const successMessage = 'wysłano, dziękujemy!'
         const adressErrorMessage = 'nie podano adresu'
 
+        // jeśli są błędy - nie wysyłaj //
 
         if (errorMessages) return
         if (!adress) {
@@ -56,6 +65,7 @@ export function Form() {
             return
         }
 
+        // jeśli nie ma błędów - wysyłaj i resetuj stan inputów //
 
         await addDoc(pinmarkersCollection, {
             name: values.name,
@@ -66,6 +76,7 @@ export function Form() {
         })
         setValues({name: '', email: '', trees: ''})
         setAdress('')
+        setAdressError('')
         setSuccessInfo(successMessage)
     }
 
