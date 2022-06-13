@@ -1,7 +1,10 @@
 import React from 'react'
-import PlacesAutocomplete from "react-places-autocomplete";
+import PlacesAutocomplete, {
+    geocodeByAddress,
+    getLatLng
+} from "react-places-autocomplete";
 
-export function GoogleMapSearch({label,value, errorMessage, onChange, onSelect}) {
+export function GoogleMapSearch({value, onChange, onSelect, adressError}) {
     return (
         <PlacesAutocomplete
             value={value}
@@ -10,13 +13,13 @@ export function GoogleMapSearch({label,value, errorMessage, onChange, onSelect})
         >
             {({getInputProps, suggestions, getSuggestionItemProps, loading}) => (
                 <div style={{width: '100%'}}>
-                    {label} {errorMessage && <span className='error-message'>({errorMessage})</span>}<br/>
+                    <span>Adres:</span> {adressError && <span className='error-message'>({adressError})</span>}
                     <input {...getInputProps({placeholder: "wyszukaj adres"})}
                            className='form__input'
                     />
 
                     <div>
-                        {loading ? <div>...loading</div> : null}
+                        {loading ? <div>...szukam</div> : null}
 
                         {suggestions.map(suggestion => {
                             const style = {
@@ -33,5 +36,6 @@ export function GoogleMapSearch({label,value, errorMessage, onChange, onSelect})
                 </div>
             )}
         </PlacesAutocomplete>
+
     )
 }

@@ -1,12 +1,10 @@
 import React, {useState} from 'react'
 import {Input} from "./Input";
+import {GoogleMapSearch} from "./GoogleMapSearch";
 import {validate} from "./validate";
 import db from '../../firebase/firebase';
 import {addDoc, collection} from 'firebase/firestore'
-import PlacesAutocomplete, {
-    geocodeByAddress,
-    getLatLng
-} from "react-places-autocomplete";
+import {geocodeByAddress, getLatLng} from "react-places-autocomplete";
 
 
 export function Form() {
@@ -15,13 +13,13 @@ export function Form() {
         email: '',
         trees: ''
     });
-    const [address, setAddress] = React.useState("");
-    const [coordinates, setCoordinates] = React.useState({
+    const [adress, setAdress] = useState("");
+    const [coordinates, setCoordinates] = useState({
         lat: null,
         lng: null
     });
     const [errorMessages, setErrorMessages] = useState(null)
-    const [adressError, setAddressError] = useState(null)
+    const [adressError, setAdressError] = useState(null)
     const [successInfo, setSuccessInfo] = useState(null)
     const pinmarkersCollection = collection(db, 'pinmarkers')
 
@@ -40,7 +38,7 @@ export function Form() {
     const handleSelectLocation = async value => {
         const results = await geocodeByAddress(value);
         const latLng = await getLatLng(results[0]);
-        setAddress(value);
+        setAdress(value);
         setCoordinates(latLng);
     };
 
@@ -53,8 +51,8 @@ export function Form() {
 
 
         if (errorMessages) return
-        if (!address) {
-            setAddressError(adressErrorMessage)
+        if (!adress) {
+            setAdressError(adressErrorMessage)
             return
         }
 
@@ -67,7 +65,7 @@ export function Form() {
             trees: Number(values.trees)
         })
         setValues({name: '', email: '', trees: ''})
-        setAddress('')
+        setAdress('')
         setSuccessInfo(successMessage)
     }
 
@@ -91,37 +89,12 @@ export function Form() {
                 onChange={handleChange}
             />
 
-
-            <PlacesAutocomplete
-                value={address}
-                onChange={setAddress}
+            <GoogleMapSearch
+                value={adress}
+                onChange={setAdress}
                 onSelect={handleSelectLocation}
-            >
-                {({getInputProps, suggestions, getSuggestionItemProps, loading}) => (
-                    <div style={{width: '100%'}} key={coordinates.lat}>
-                        <span>Adres:</span> {adressError && <span className='error-message'>({adressError})</span>}
-                        <input {...getInputProps({placeholder: "wyszukaj adres"})}
-                               className='form__input'
-                        />
-
-                        <div>
-                            {loading ? <div>...loading</div> : null}
-
-                            {suggestions.map(suggestion => {
-                                const style = {
-                                    backgroundColor: suggestion.active ? "#55dfb4" : "#fff"
-                                };
-
-                                return (
-                                    <div {...getSuggestionItemProps(suggestion, {style})} key={suggestion.description}>
-                                        {suggestion.description}
-                                    </div>
-                                );
-                            })}
-                        </div>
-                    </div>
-                )}
-            </PlacesAutocomplete>
+                adressError={adressError}
+            />
 
             <Input
                 label='Ilość drzew które widzisz z okna:'
