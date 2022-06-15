@@ -32,8 +32,6 @@ export function Form() {
 
     function handleChange(event) {
         const {name, value} = event.target
-        console.log(values)
-
         setValues(prevValues => {
             return {
                 ...prevValues,
@@ -73,8 +71,9 @@ export function Form() {
         await addDoc(pinmarkersCollection, {
             name: values.name,
             email: values.email,
-            positionX: coordinates.lat,
-            positionY: coordinates.lng,
+            adress: adress,
+            positionX: coordinates.lat + (Math.random()*0.001),
+            positionY: coordinates.lng + (Math.random()*0.001),
             trees: Number(values.trees),
             noice: values.noice
         })
@@ -109,6 +108,8 @@ export function Form() {
                 onChange={setAdress}
                 onSelect={handleSelectLocation}
                 adressError={adressError}
+                errorMessage={errorMessages?.adress}
+
             />
 
             <Input
@@ -126,6 +127,7 @@ export function Form() {
                 label='Hałas:'
                 name='noice'
                 value={values.noice}
+                errorMessage={errorMessages?.noice}
                 options={['cicho', 'głośno']}
                 onChange={handleChange}
             />

@@ -18,6 +18,10 @@ export function validate(values) {
         errorMessages.trees = 'podaj liczbę drzew'
     }
 
+    if (values.noice === '') {
+        errorMessages.noice = 'podaj poziom hałasu'
+    }
+
 
     return Object.keys(errorMessages).length > 0
         ? errorMessages

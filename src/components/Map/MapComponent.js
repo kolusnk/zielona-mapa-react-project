@@ -9,6 +9,7 @@ import {onSnapshot, collection} from 'firebase/firestore'
 
 
 
+
 export function MapComponent() {
     const [markers, setMarkers] = useState([]);
     console.log(markers)
@@ -34,6 +35,7 @@ export function MapComponent() {
                         markers.map(marker => {
                             return <PinMarker key={marker.id} position={[marker.positionX, marker.positionY]}>
                                 <Popup>
+                                    adres: {marker.adress}<br/>
                                     ilość drzew: {marker.trees}<br/>
                                     poziom hałasu: {marker.noice}
                                 </Popup>
