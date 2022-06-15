@@ -1,18 +1,31 @@
 .map__container {
   height: calc(100vh - 72px);
   display: flex;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
 }
 
-#map {
+.map {
   height: 80%;
   width: 95%;
   padding: 2rem 0;
+
+  &__popup {
+    &-title {
+      font-size:0.8rem;
+      color: #55dfb4;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    margin: 0 !important;
+    span {
+      font-weight: bold;
+    }
+  }
 }
 
 .custom-style {
-  box-shadow: 0 1px 5px rgba(0,0,0,0.65) !important;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.65) !important;
   --icon-width: 50px !important;
   --icon-height: 50px !important;
   --active-height: 40px !important;

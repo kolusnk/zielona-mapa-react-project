@@ -73,8 +73,8 @@ export function Form() {
             name: values.name,
             email: values.email,
             adress: adress,
-            positionX: coordinates.lat + (Math.random()*0.001),
-            positionY: coordinates.lng + (Math.random()*0.001),
+            positionX: coordinates.lat + (Math.random()*0.0005),
+            positionY: coordinates.lng + (Math.random()*0.0005),
             trees: Number(values.trees),
             noice: values.noice,
             floor: values.floor

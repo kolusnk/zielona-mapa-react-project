@@ -19,11 +19,11 @@ export function MapComponent() {
     }, [])
 
 
-    const center = [52.33043861355005, 21.010922836222367]
+    const center = [52.096696599828014, 19.41233664228455]
     return (
         <section className='container map__container'>
-            <div id='map'>
-                <Map center={center} zoom={7} scrollWheelZoom={true}
+            <div className='map'>
+                <Map center={center} zoom={6} scrollWheelZoom={true}
                      style={{width: "100%", height: "100%"}}>
                     <TileLayer
                         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
