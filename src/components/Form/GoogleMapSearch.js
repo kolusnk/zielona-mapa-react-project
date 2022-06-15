@@ -19,7 +19,7 @@ export function GoogleMapSearch({value, onChange, onSelect, adressError}) {
                     />
 
 
-                    <div>
+                    <div className={suggestions.length > 0 ? 'form__input-results': 'dn'}>
                         {loading ? <div>...szukam</div> : null}
 
                         {suggestions.map(suggestion => {
