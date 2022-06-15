@@ -1,12 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import {SearchInput} from "./SearchInput"
-import {PinMarker} from "./PinMarker";
 import './map.scss'
-import {Map, Popup, TileLayer} from "react-leaflet";
+import {Map, TileLayer} from "react-leaflet";
 import 'leaflet/dist/leaflet.css'
 import db from '../../firebase/firebase';
 import {onSnapshot, collection} from 'firebase/firestore'
-import {MyPopup} from "./MyPopup";
+import {AllMarkers} from './AllMarkers';
 
 
 export function MapComponent() {
@@ -30,18 +29,8 @@ export function MapComponent() {
                         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                     />
                     <SearchInput/>
-                    {
-                        markers.map(marker => {
-                            return <PinMarker key={marker.id} position={[marker.positionX, marker.positionY]}>
-                                <MyPopup
-                                    adress={marker.adress}
-                                    trees={marker.trees}
-                                    floor={marker.floor}
-                                    noice={marker.noice}
-                                />
-                            </PinMarker>
-                        })
-                    }
+                    <AllMarkers markers={markers}/>
+
                 </Map>
             </div>
         </section>

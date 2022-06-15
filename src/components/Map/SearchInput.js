@@ -25,7 +25,7 @@ export const SearchInput = (props) => {
         <ReactLeafletSearch position="topleft"
                             markerIcon={myIcon}
                             popUp={myPopup}
-                            zoom={14}
+                            zoom={17}
                             inputPlaceholder="Wyszukaj swoje zielone miejsce"
                             className="custom-style"/>
     )
