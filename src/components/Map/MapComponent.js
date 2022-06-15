@@ -2,12 +2,11 @@ import React, {useState, useEffect} from 'react';
 import {SearchInput} from "./SearchInput"
 import {PinMarker} from "./PinMarker";
 import './map.scss'
-import 'leaflet/dist/leaflet.css'
 import {Map, Popup, TileLayer} from "react-leaflet";
+import 'leaflet/dist/leaflet.css'
 import db from '../../firebase/firebase';
 import {onSnapshot, collection} from 'firebase/firestore'
-
-
+import {MyPopup} from "./MyPopup";
 
 
 export function MapComponent() {
@@ -25,7 +24,7 @@ export function MapComponent() {
         <section className='container map__container'>
             <div id='map'>
                 <Map center={center} zoom={7} scrollWheelZoom={true}
-                              style={{width: "100%", height: "100%"}}>
+                     style={{width: "100%", height: "100%"}}>
                     <TileLayer
                         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -34,11 +33,12 @@ export function MapComponent() {
                     {
                         markers.map(marker => {
                             return <PinMarker key={marker.id} position={[marker.positionX, marker.positionY]}>
-                                <Popup>
-                                    adres: {marker.adress}<br/>
-                                    ilość drzew: {marker.trees}<br/>
-                                    poziom hałasu: {marker.noice}
-                                </Popup>
+                                <MyPopup
+                                    adress={marker.adress}
+                                    trees={marker.trees}
+                                    floor={marker.floor}
+                                    noice={marker.noice}
+                                />
                             </PinMarker>
                         })
                     }

@@ -18,6 +18,9 @@ export function validate(values) {
         errorMessages.trees = 'podaj liczbę drzew'
     }
 
+    if (values.floor === '') {
+        errorMessages.floor = 'podaj piętro na którym mieszkasz'
+    }
     if (values.noice === '') {
         errorMessages.noice = 'podaj poziom hałasu'
     }

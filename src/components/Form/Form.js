@@ -1,11 +1,11 @@
 import React, {useState} from 'react'
 import {Input} from "./Input";
+import {Select} from "./Select";
 import {GoogleMapSearch} from "./GoogleMapSearch";
 import {validate} from "./validate";
 import db from '../../firebase/firebase';
 import {addDoc, collection} from 'firebase/firestore'
 import {geocodeByAddress, getLatLng} from "react-places-autocomplete";
-import {Select} from "./Select";
 
 
 export function Form() {
@@ -16,7 +16,8 @@ export function Form() {
         name: '',
         email: '',
         trees: '',
-        noice: ''
+        noice: '',
+        floor: ''
     });
     const [coordinates, setCoordinates] = useState({
         lat: null,
@@ -75,9 +76,10 @@ export function Form() {
             positionX: coordinates.lat + (Math.random()*0.001),
             positionY: coordinates.lng + (Math.random()*0.001),
             trees: Number(values.trees),
-            noice: values.noice
+            noice: values.noice,
+            floor: values.floor
         })
-        setValues({name: '', email: '', trees: '', noice:''})
+        setValues({name: '', email: '', trees: '', noice:'', floor: ''})
         setAdress('')
         setAdressError('')
         setSuccessInfo(successMessage)
@@ -123,14 +125,26 @@ export function Form() {
                 onChange={handleChange}
             />
 
+            <Input
+                label='Piętro na którym mieszkasz:'
+                type='number'
+                name='floor'
+                value={values.floor}
+                min={0}
+                max={11}
+                errorMessage={errorMessages?.floor}
+                onChange={handleChange}
+            />
+
             <Select
-                label='Hałas:'
+                label='Poziom hałasu:'
                 name='noice'
                 value={values.noice}
                 errorMessage={errorMessages?.noice}
                 options={['cicho', 'głośno']}
                 onChange={handleChange}
             />
+
 
             <div className='button-and-succes'>
                 <button className='btn btn-primary btn-green' onClick={sendToDatabase}>Wyślij</button>
