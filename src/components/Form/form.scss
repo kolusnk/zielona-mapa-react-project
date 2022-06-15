@@ -26,6 +26,12 @@
     border-radius: 6px;
     padding: 5px 10px;
     border: 1px solid #55dfb4;
+    background-color: transparent;
+    box-sizing: border-box;
+  }
+
+  select {
+    padding: 5px 10px;
   }
 
   .error-message {

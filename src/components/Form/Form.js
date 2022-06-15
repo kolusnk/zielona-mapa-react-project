@@ -5,6 +5,7 @@ import {validate} from "./validate";
 import db from '../../firebase/firebase';
 import {addDoc, collection} from 'firebase/firestore'
 import {geocodeByAddress, getLatLng} from "react-places-autocomplete";
+import {Select} from "./Select";
 
 
 export function Form() {
@@ -14,7 +15,8 @@ export function Form() {
     const [values, setValues] = useState({
         name: '',
         email: '',
-        trees: ''
+        trees: '',
+        noice: ''
     });
     const [coordinates, setCoordinates] = useState({
         lat: null,
@@ -30,6 +32,7 @@ export function Form() {
 
     function handleChange(event) {
         const {name, value} = event.target
+        console.log(values)
 
         setValues(prevValues => {
             return {
@@ -72,9 +75,10 @@ export function Form() {
             email: values.email,
             positionX: coordinates.lat,
             positionY: coordinates.lng,
-            trees: Number(values.trees)
+            trees: Number(values.trees),
+            noice: values.noice
         })
-        setValues({name: '', email: '', trees: ''})
+        setValues({name: '', email: '', trees: '', noice:''})
         setAdress('')
         setAdressError('')
         setSuccessInfo(successMessage)
@@ -115,6 +119,14 @@ export function Form() {
                 min={0}
                 max={100}
                 errorMessage={errorMessages?.trees}
+                onChange={handleChange}
+            />
+
+            <Select
+                label='Hałas:'
+                name='noice'
+                value={values.noice}
+                options={['cicho', 'głośno']}
                 onChange={handleChange}
             />
 

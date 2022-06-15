@@ -6,7 +6,7 @@ export function validate(values) {
         errorMessages.name = 'musi być dłuższe niż 2 znaki'
     }
 
-    if (values.email.length <= 8) {
+    if (values.email.length <= 7) {
         errorMessages.email = 'musi być dłuższy niż 7 znaków'
     }
 

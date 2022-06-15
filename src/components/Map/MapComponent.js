@@ -34,7 +34,8 @@ export function MapComponent() {
                         markers.map(marker => {
                             return <PinMarker key={marker.id} position={[marker.positionX, marker.positionY]}>
                                 <Popup>
-                                    ilość drzew {marker.trees}
+                                    ilość drzew: {marker.trees}<br/>
+                                    poziom hałasu: {marker.noice}
                                 </Popup>
                             </PinMarker>
                         })
