@@ -3,11 +3,11 @@ export function validate(values) {
     const pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/
 
     if (values.name.length <= 2) {
-        errorMessages.name = 'musi być dłuższe niż 2 znaki'
+        errorMessages.name = 'imię musi być dłuższe niż 2 znaki'
     }
 
     if (values.email.length <= 7) {
-        errorMessages.email = 'musi być dłuższy niż 7 znaków'
+        errorMessages.email = 'email musi być dłuższy niż 7 znaków'
     }
 
     if (!values.email.match(pattern)) {

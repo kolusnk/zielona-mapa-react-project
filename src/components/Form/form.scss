@@ -23,6 +23,10 @@
 
   &__field {
     width: 100%;
+    &-label {
+      display: flex;
+      justify-content: space-between;
+    }
   }
 
   &__input {

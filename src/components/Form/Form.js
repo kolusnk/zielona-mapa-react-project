@@ -106,6 +106,7 @@ export function Form() {
             />
 
             <GoogleMapSearch
+                label='Adres:'
                 value={adress}
                 onChange={setAdress}
                 onSelect={handleSelectLocation}
