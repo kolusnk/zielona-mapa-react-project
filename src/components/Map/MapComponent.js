@@ -10,7 +10,6 @@ import {AllMarkers} from './AllMarkers';
 
 export function MapComponent() {
     const [markers, setMarkers] = useState([]);
-    console.log(markers)
     useEffect(() => {
         onSnapshot(collection(db, "pinmarkers"), (snapshot) => {
             setMarkers(snapshot.docs.map(doc => ({...doc.data(), id: doc.id})))

@@ -6,6 +6,7 @@ export const PinMarker = ({position, children}) => {
         iconUrl: `${process.env.PUBLIC_URL}/images/pin-marker.png`,
         iconSize: [32,32]
     })
+
     return (
         <Marker icon={iconImg} position={position} >
             {children}
