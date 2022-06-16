@@ -1,3 +1,9 @@
+@import "../zielona-mapa/src/App";
+
+
+// DESKTOP STYLE /////////////////////////////////////////////////////////
+
+
 .get-to-form {
   &__container {
     padding: 4rem 4rem 2.5rem;
@@ -11,7 +17,7 @@
   }
 
   &__text {
-    color: #a5a5a5;
+    color: $color-text-light;
   }
 
   &__buttons {
@@ -22,6 +28,8 @@
   }
 
 }
+
+// MEDIA QUERY  - 760px /////////////////////////////////////////////////////////
 
 
 @media (max-width: 760px) {

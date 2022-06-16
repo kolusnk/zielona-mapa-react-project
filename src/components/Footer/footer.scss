@@ -1,3 +1,9 @@
+@import "../zielona-mapa/src/App";
+
+
+// DESKTOP STYLE /////////////////////////////////////////////////////////
+
+
 .footer {
   box-shadow: 0 1px 16px rgba(0, 0, 0, 0.16);
 
@@ -9,13 +15,13 @@
   }
 
   &__logo {
-    color: #55dfb4;
+    color: $color-green;
     font-weight: 600;
     font-size: 1.5rem;
   }
 
   .contact {
-    color: #a5a5a5;
+    color: $color-text-light;
     margin-top: 1rem;
     display: flex;
     gap: 1rem;
@@ -26,6 +32,9 @@
     }
   }
 }
+
+// MEDIA QUERY  - 760px /////////////////////////////////////////////////////////
+
 
 @media (max-width: 760px) {
   .footer {
@@ -45,7 +54,7 @@
     }
 
     .contact {
-      color: #a5a5a5;
+      color: $color-text-light;
       margin-top: 1rem;
       display: flex;
       gap: 1rem;
@@ -57,6 +66,9 @@
     }
   }
 }
+
+// MEDIA QUERY  - 460px /////////////////////////////////////////////////////////
+
 
 @media (max-width: 460px) {
   .footer {

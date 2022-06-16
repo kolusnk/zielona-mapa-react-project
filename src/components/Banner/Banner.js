@@ -14,7 +14,7 @@ export function Banner() {
                     bazy danych wypełniając krótki formularz.</p>
                 <div className='cta__buttons'>
                     <Link className="btn-link" to="/map">
-                        <button className='btn btn-primary btn-green'>Sprawdź na mapie</button>
+                        <button className='btn btn-primary'>Sprawdź na mapie</button>
                     </Link>
                     <Link className="btn-link" to="/formpage">
                         <button className='btn btn-secondary'>Wypełnij formularz</button>

@@ -1,11 +1,23 @@
+//@import "../zielona-mapa/src/components/Header/header";
+//@import "../zielona-mapa/src/components/Banner/banner";
+//@import "../zielona-mapa/src/components/HowItWorks/howitworks";
+//@import "../zielona-mapa/src/components/GetToForm/gettoform";
+//@import "../zielona-mapa/src/components/Footer/footer";
+//@import "../zielona-mapa/src/components/Map/map";
+//@import "../zielona-mapa/src/components/Form/form";
+
+
 //KOLORY ////////////////////////////////////////////////////////////////
 
 $color-green: #55dfb4;
 $color-text-light: #a5a5a5;
 $color-primary-shadow: rgba(53, 145, 118, 0.16);
 $color-secondary-shadow: rgba(165, 165, 165, 0.18);
+$color-error: #f37171;
 
+// ZAOKRĄGLENIA ////////////////////////////////////////////////////////////
 
+$border-radius: 6px;
 $button-radius: 35px;
 
 
@@ -27,7 +39,7 @@ body {
   font-weight: bold;
   display: inline-block;
   padding: 16px 65px;
-  border-radius: 35px;
+  border-radius: $button-radius;
   border: 1px solid transparent;
 
 

@@ -14,7 +14,7 @@ export function GetToForm () {
                 pytań, a dzięki temu pomożesz innym zobaczyć jak zielono jest w Twojej okolicy! Prawda, że brzmi fajnie?</p>
                 <div className='get-to-form__buttons'>
                     <Link className="btn-link" to="/formpage">
-                        <button className='btn btn-primary btn-green'>Wypełnij formularz</button>
+                        <button className='btn btn-primary'>Wypełnij formularz</button>
                     </Link>
                     <Link className="btn-link" to="/map">
                         <button className='btn btn-secondary'>Sprawdź na mapie</button>

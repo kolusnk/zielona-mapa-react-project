@@ -1,6 +1,7 @@
-$color-green: #55dfb4;
-$color-text-light: #a5a5a5;
+@import "../zielona-mapa/src/App";
 
+
+// DESKTOP STYLE /////////////////////////////////////////////////////////
 
 .header {
   box-shadow: 0 1px 16px rgba(0, 0, 0, 0.16);
@@ -56,6 +57,9 @@ $color-text-light: #a5a5a5;
 
 }
 
+// MEDIA QUERY  - 760px /////////////////////////////////////////////////////////
+
+
 @media (max-width: 760px) {
   .header {
 
@@ -88,6 +92,7 @@ $color-text-light: #a5a5a5;
 
 }
 
+// MEDIA QUERY  - 580px /////////////////////////////////////////////////////////
 
 @media (max-width: 580px) {
   .header {
@@ -120,11 +125,11 @@ $color-text-light: #a5a5a5;
       position: absolute;
       top: 72px;
       right: 10px;
-      background-color: rgb(255, 255, 255);
+      background-color: white;
       width: 200px;
       z-index: 123;
-      border-radius: 6px;
-      border: 1px solid #55dfb4;
+      border-radius: $border-radius;
+      border: 1px solid $color-green;
     }
 
     .fa-bars {
