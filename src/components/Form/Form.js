@@ -1,4 +1,4 @@
-import React, {useState, useEffect, isValidElement} from 'react'
+import React, {useState} from 'react'
 import {Input} from "./Input";
 import {Select} from "./Select";
 import {GoogleMapSearch} from "./GoogleMapSearch";
@@ -41,7 +41,6 @@ export function Form() {
             }
         })
     }
-
 
     // obsługa WYBORU ADRESU i uaktualnienie jego stanu //
 
