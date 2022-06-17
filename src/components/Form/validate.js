@@ -18,8 +18,8 @@ export function validate(values) {
         errorMessages.trees = 'podaj liczbę drzew'
     }
 
-    if (values.others === '') {
-        errorMessages.others = 'powiedz jaki jest widok z okna'
+    if (values.view === '') {
+        errorMessages.view = 'powiedz jaki jest widok z okna'
     }
 
     if (values.floor === '') {
@@ -30,8 +30,8 @@ export function validate(values) {
         errorMessages.floor = 'przedział między 0 a 12'
     }
 
-    if (values.noice === '') {
-        errorMessages.noice = 'podaj poziom hałasu'
+    if (values.noise === '') {
+        errorMessages.noise = 'podaj poziom hałasu'
     }
 
 

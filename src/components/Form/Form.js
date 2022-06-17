@@ -130,8 +130,8 @@ export function Form() {
             <Select
                 label='Jaki jest widok z okna:'
                 name='others'
-                value={values.others}
-                errorMessage={errorMessages?.others}
+                value={values.view}
+                errorMessage={errorMessages?.view}
                 options={['podwórko', 'parking', 'ulica', 'otwarta przestrzeń', 'natura', 'inne']}
                 onChange={handleChange}
             />
