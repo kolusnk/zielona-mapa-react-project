@@ -16,8 +16,8 @@ export function Form() {
         name: '',
         email: '',
         trees: '',
-        others: '',
-        noice: '',
+        view: '',
+        noise: '',
         floor: ''
     });
     const [coordinates, setCoordinates] = useState({
@@ -41,7 +41,9 @@ export function Form() {
             }
         })
     }
-        // obsługa WYBORU ADRESU i uaktualnienie jego stanu //
+
+
+    // obsługa WYBORU ADRESU i uaktualnienie jego stanu //
 
     const handleSelectLocation = async value => {
         const results = await geocodeByAddress(value);
@@ -73,14 +75,14 @@ export function Form() {
             name: values.name,
             email: values.email,
             adress: adress,
-            positionX: coordinates.lat + (Math.random()*0.0005),
-            positionY: coordinates.lng + (Math.random()*0.0005),
+            positionX: coordinates.lat + (Math.random() * 0.0005),
+            positionY: coordinates.lng + (Math.random() * 0.0005),
             trees: values.trees,
-            others: values.others,
-            noice: values.noice,
+            view: values.view,
+            noise: values.noise,
             floor: values.floor
         })
-        setValues({name: '', email: '', trees: '', others: '', noice:'', floor: ''})
+        setValues({name: '', email: '', trees: '', view: '', noice: '', floor: ''})
         setAdress('')
         setAdressError('')
         setSuccessInfo(successMessage)
@@ -149,8 +151,8 @@ export function Form() {
             <Select
                 label='Poziom hałasu:'
                 name='noice'
-                value={values.noice}
-                errorMessage={errorMessages?.noice}
+                value={values.noise}
+                errorMessage={errorMessages?.noise}
                 options={['cicho', 'głośno']}
                 onChange={handleChange}
             />

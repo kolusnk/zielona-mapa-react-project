@@ -112,8 +112,8 @@
   .form__section {
 
     &-container {
-      height: calc(100vh - 2rem - 68px);
-      padding: 1rem 2rem;
+      height: calc(100vh - 4rem - 68px);
+      padding: 2rem;
       flex-direction: column;
       justify-content: center;
       gap: 2rem;
