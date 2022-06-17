@@ -82,7 +82,7 @@ export function Form() {
             noise: values.noise,
             floor: values.floor
         })
-        setValues({name: '', email: '', trees: '', view: '', noice: '', floor: ''})
+        setValues({name: '', email: '', trees: '', view: '', noise: '', floor: ''})
         setAdress('')
         setAdressError('')
         setSuccessInfo(successMessage)
@@ -129,7 +129,7 @@ export function Form() {
 
             <Select
                 label='Jaki jest widok z okna:'
-                name='others'
+                name='view'
                 value={values.view}
                 errorMessage={errorMessages?.view}
                 options={['podwórko', 'parking', 'ulica', 'otwarta przestrzeń', 'natura', 'inne']}
@@ -150,7 +150,7 @@ export function Form() {
 
             <Select
                 label='Poziom hałasu:'
-                name='noice'
+                name='noise'
                 value={values.noise}
                 errorMessage={errorMessages?.noise}
                 options={['cicho', 'głośno']}
