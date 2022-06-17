@@ -14,11 +14,11 @@ export function validate(values) {
         errorMessages.email = 'adres email niepoprawny'
     }
 
-    if (values.trees === '') {
+    if (values.trees === '' || values.trees < 0 || values.trees > 100) {
         errorMessages.trees = 'podaj liczbę drzew'
     }
 
-    if (values.floor === '') {
+    if (values.floor === '' || values.floor < 0 || values.floor > 12) {
         errorMessages.floor = 'podaj piętro na którym mieszkasz'
     }
     if (values.noice === '') {
