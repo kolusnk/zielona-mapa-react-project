@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect, isValidElement} from 'react'
 import {Input} from "./Input";
 import {Select} from "./Select";
 import {GoogleMapSearch} from "./GoogleMapSearch";
@@ -16,6 +16,7 @@ export function Form() {
         name: '',
         email: '',
         trees: '',
+        others: '',
         noice: '',
         floor: ''
     });
@@ -40,8 +41,7 @@ export function Form() {
             }
         })
     }
-
-    // obsługa WYBORU ADRESU i uaktualnienie jego stanu //
+        // obsługa WYBORU ADRESU i uaktualnienie jego stanu //
 
     const handleSelectLocation = async value => {
         const results = await geocodeByAddress(value);
@@ -75,11 +75,12 @@ export function Form() {
             adress: adress,
             positionX: coordinates.lat + (Math.random()*0.0005),
             positionY: coordinates.lng + (Math.random()*0.0005),
-            trees: Number(values.trees),
+            trees: values.trees,
+            others: values.others,
             noice: values.noice,
             floor: values.floor
         })
-        setValues({name: '', email: '', trees: '', noice:'', floor: ''})
+        setValues({name: '', email: '', trees: '', others: '', noice:'', floor: ''})
         setAdress('')
         setAdressError('')
         setSuccessInfo(successMessage)
@@ -115,16 +116,24 @@ export function Form() {
 
             />
 
-            <Input
+            <Select
                 label='Ilość drzew które widzisz z okna:'
-                type='number'
                 name='trees'
                 value={values.trees}
-                min={0}
-                max={100}
+                options={['0', '1-5', '5-10', '10-20', 'więcej...', 'park', 'las']}
                 errorMessage={errorMessages?.trees}
                 onChange={handleChange}
             />
+
+            <Select
+                label='Jaki jest widok z okna:'
+                name='others'
+                value={values.others}
+                errorMessage={errorMessages?.others}
+                options={['podwórko', 'parking', 'ulica', 'otwarta przestrzeń', 'natura', 'inne']}
+                onChange={handleChange}
+            />
+
 
             <Input
                 label='Piętro na którym mieszkasz:'

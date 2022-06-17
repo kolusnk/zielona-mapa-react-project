@@ -14,13 +14,22 @@ export function validate(values) {
         errorMessages.email = 'adres email niepoprawny'
     }
 
-    if (values.trees === '' || values.trees < 0 || values.trees > 100) {
+    if (values.trees === '') {
         errorMessages.trees = 'podaj liczbę drzew'
     }
 
-    if (values.floor === '' || values.floor < 0 || values.floor > 12) {
+    if (values.others === '') {
+        errorMessages.others = 'powiedz jaki jest widok z okna'
+    }
+
+    if (values.floor === '') {
         errorMessages.floor = 'podaj piętro na którym mieszkasz'
     }
+
+    if (values.floor < 0 || values.floor > 12) {
+        errorMessages.floor = 'przedział między 0 a 12'
+    }
+
     if (values.noice === '') {
         errorMessages.noice = 'podaj poziom hałasu'
     }

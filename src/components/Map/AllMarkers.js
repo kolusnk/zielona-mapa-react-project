@@ -7,7 +7,7 @@ export function AllMarkers ({markers}) {
         markers.map(marker => {
             return (
             <PinMarker key={marker.id} position={[marker.positionX, marker.positionY]}>
-                <MyPopup adress={marker.adress} trees={marker.trees} floor={marker.floor} noice={marker.noice}/>
+                <MyPopup adress={marker.adress} trees={marker.trees} others={marker.others} floor={marker.floor} noice={marker.noice}/>
             </PinMarker>
                 )
         })

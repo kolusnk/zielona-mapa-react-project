@@ -27,6 +27,7 @@ export function GoogleMapSearch({label, value, onChange, onSelect, adressError})
                         {suggestions.map(suggestion => {
                             const style = {
                                 backgroundColor: suggestion.active ? "#55dfb4" : "#fff",
+                                lineHeight: '2'
                             };
 
                             return (
