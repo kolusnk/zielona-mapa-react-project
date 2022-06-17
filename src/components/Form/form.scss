@@ -23,6 +23,7 @@
 
   &__field {
     width: 100%;
+
     &-label {
       display: flex;
       justify-content: space-between;
@@ -38,6 +39,7 @@
     border: 1px solid $color-green;
     background-color: white;
     box-sizing: border-box;
+
     &-results {
       position: absolute;
       border-radius: 6px;
@@ -47,6 +49,7 @@
       z-index: 2;
       max-width: 500px;
     }
+
     .dn {
       display: none;
     }
@@ -110,8 +113,7 @@
 
     &-container {
       height: calc(100vh - 2rem - 68px);
-      padding: 2rem;
-      height: inherit;
+      padding: 1rem 2rem;
       flex-direction: column;
       justify-content: center;
       gap: 2rem;
@@ -121,6 +123,12 @@
   .form {
     width: 80%;
     padding-left: 0;
+
+    &__field {
+      &-label {
+        flex-direction: column;
+      }
+    }
   }
 
   .form-text {

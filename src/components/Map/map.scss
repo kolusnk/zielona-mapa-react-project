@@ -41,3 +41,26 @@
   --background-color-active: #55dfb4 !important;
   --svg-stroke-width: 5px;
 }
+
+
+// MEDIA QUERY  - 760px /////////////////////////////////////////////////////////
+
+
+@media (max-width: 760px) {
+  .map__container {
+    height: calc(100vh - 4rem - 68px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .map {
+    box-sizing: border-box;
+    padding: 2rem 0;
+    height: 100%;
+    width: 95%;
+    z-index: 0;
+
+  }
+
+}
