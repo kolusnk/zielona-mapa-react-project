@@ -2,7 +2,7 @@ ZIELONA MAPA (The Green Map)
 
 # GENERAL INFO / INTRODUCTION
 
-The green map is the final project that I built in order to complete the front-end developer course. Its assumptions were to use the acquired knowledge and use it for purposes close to my heart - ecology, urban planning and urban greenery. Thanks to this application, users can find out what the greenery of the city looks like in the area to which they would like to move. The data that can be read on the map can be used to analyze a given area and on this basis assess whether it is a living space. Each user can also expand the database by filling out a form in which he will provide details of the place where he currently lives. The entire database is to be based on a community of people who want the place where they live to be green, clean and ecological.
+The "green map" (Zielona mapa) is the final project that I built in order to complete the front-end developer course. Its assumptions were to use the acquired knowledge and use it for purposes close to my heart - ecology, urban planning and urban greenery. Thanks to this application, users can find out what the greenery of the city looks like in the area to which they would like to move. The data that can be read on the map can be used to analyze a given area and on this basis assess whether it is a living space. Each user can also expand the database by filling out a form in which he will provide details of the place where he currently lives. The entire database is to be based on a community of people who want the place where they live to be green, clean and ecological.
 
 ## TECHNOLOGIES
 
