@@ -7,7 +7,7 @@ export function Select({label, name, options, value, onChange, errorMessage}) {
                 <span>{label}</span>
                 <span>{errorMessage && <span className='error-message'>({errorMessage})</span>}</span>
             </div>
-            <select className="form__input" name={name} id={name} value={value} onChange={onChange}>
+            <select multiple className="form__input" name={name} id={name} value={value} onChange={onChange}>
                 <option></option>
                 {options.map(option => {
                     return <option key={option}>{option}</option>

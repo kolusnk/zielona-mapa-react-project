@@ -9,7 +9,7 @@ import { getFirestore, doc, addDoc} from "firebase/firestore";
 
 const firebaseConfig = {
 
-    apiKey: "AIzaSyC6Rve0xEa6K_AZigexjTkBvFpRib3D9WU",
+    apiKey: "AIzaSyCYwIqOvZsxfc_HMv8N-AjtyF_Jx4hz5U0",
 
     authDomain: "zielona-mapa.firebaseapp.com",
 

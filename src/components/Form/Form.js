@@ -34,6 +34,7 @@ export function Form() {
 
     function handleChange(event) {
         const {name, value} = event.target
+        console.log([event.target])
         setValues(prevValues => {
             return {
                 ...prevValues,
